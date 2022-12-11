@@ -15,20 +15,20 @@ services:
       - backend
     networks:
       - infisical
-  
+
   backend:
     container_name: infisical-backend
     restart: unless-stopped
     depends_on:
       - mongo
-    image: infisical/backend
+    image: egi-infisical/backend
     command: npm run start
     env_file: .env
     environment:
       - NODE_ENV=production
     networks:
       - infisical
-  
+
   frontend:
     container_name: infisical-frontend
     restart: unless-stopped
