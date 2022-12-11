@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
     depends_on:
       - mongo
-    image: egi-infisical/backend
+    image: infisical/backend
     command: npm run start
     env_file: .env
     environment:
