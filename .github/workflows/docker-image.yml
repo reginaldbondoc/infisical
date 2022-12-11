@@ -65,12 +65,12 @@ jobs:
         with:
           load: true
           context: frontend
-          tags: egi-infisical/frontend:test
+          tags: infisical/frontend:test
           build-args: |
             POSTHOG_API_KEY=${{ secrets.PUBLIC_POSTHOG_API_KEY }}
       - name: ⏻ Spawn frontend container
         run: |
-          docker run -d --rm --name infisical-frontend-test egi-infisical/frontend:test
+          docker run -d --rm --name infisical-frontend-test infisical/frontend:test
       - name: 🧪 Test frontend image
         run: |
           ./.github/resources/healthcheck.sh infisical-frontend-test
