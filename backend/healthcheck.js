@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-const request = require('http');
+const http = require('http');
 const PORT = process.env.PORT || 4000;
 const options = {
   host: 'localhost',
@@ -10,7 +10,7 @@ const options = {
   path: '/healthcheck'
 };
 
-const healthCheck = request(options, (res) => {
+const healthCheck = http.request(options, (res) => {
   console.log(`HEALTHCHECK STATUS: ${res.statusCode}`);
   if (res.statusCode == 200) {
     process.exit(0);
