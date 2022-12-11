@@ -64,7 +64,7 @@ jobs:
         with:
           load: true
           context: frontend
-          tags: infisical/frontend:test
+          tags: egi-infisical/frontend:test
           build-args: |
             POSTHOG_API_KEY=${{ secrets.PUBLIC_POSTHOG_API_KEY }}
       - name: ⏻ Spawn frontend container
