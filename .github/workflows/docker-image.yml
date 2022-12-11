@@ -27,7 +27,10 @@ jobs:
           tags: egi-infisical/backend:test
       - name: ⏻ Spawn backend container and dependencies
         run: |
-          docker compose -f .github/resources/docker-compose.be-test.yml up -d
+          docker compose -f .github/resources/docker-compose.be-test.yml up --wait --quiet-pull
+      - name: Remove me, list containers
+        run: |
+          docker ps -a
       - name: 🧪 Test backend image
         run: |
           ./.github/resources/healthcheck.sh infisical-backend-test
