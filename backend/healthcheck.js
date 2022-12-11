@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import { request } from 'http';
+const request = require('http');
 const PORT = process.env.PORT || 4000;
 const options = {
   host: 'localhost',
