@@ -30,7 +30,7 @@ jobs:
           docker compose -f .github/resources/docker-compose.be-test.yml up -d
       - name: 🧪 Test backend image
         run: |
-          sh .github/resources/healthcheck.sh infisical-backend-test
+          ./.github/resources/healthcheck.sh infisical-backend-test
       - name: ⏻ Shut down backend container and dependencies
         run: |
           docker compose -f .github/resources/docker-compose.be-test.yml down
